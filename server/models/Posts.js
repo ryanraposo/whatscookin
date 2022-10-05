@@ -17,6 +17,11 @@ const postsSchema = new Schema(
     image: {
         type: String,
     },
+    // The categories will be set in the front end (the names of them)
+    categories: {
+        type: String,
+        required: true
+    },
     createdAt: {
       type: Date,
       default: Date.now,
