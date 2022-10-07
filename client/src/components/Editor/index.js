@@ -18,10 +18,12 @@ function Editor() {
 
     return (
         <>
+            {/* DEBUG */}
             <br/>
             {value}
             <br/>
-            
+            {/* DEBUG */}
+
             <ReactQuill 
                 theme="snow" 
                 value={value} 
