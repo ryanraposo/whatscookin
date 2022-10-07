@@ -5,7 +5,9 @@ import Editor from '../components/Editor';
 
 
 const NewPost = () => {
-
+    return (
+        <Editor/>
+    )
 }
 
 
