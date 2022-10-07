@@ -11,7 +11,10 @@ const resolvers = {
             if (context.user) {
                 const me = await User.findById(context.user._id)
                     .select('-__v -password')
-                    .populate('posts');
+                    .populate({
+                        path: 'posts',
+                        populate: 'categories'
+                    });
                 return me;
             }
             throw new AuthenticationError('Not logged in');
@@ -19,8 +22,11 @@ const resolvers = {
         user: async (parent, { _id }, context) => {
             if (context.user) {
                 const user = await User.findById(_id)
-                    .select('-__v -password')
-                    .populate('posts');
+                    .select('-__v')
+                    .populate({
+                        path: 'posts',
+                        populate: 'categories'
+                    });
                 return user;
             }
             throw new AuthenticationError('Not logged in');
@@ -43,6 +49,7 @@ const resolvers = {
             if (context.user) {
                 return await Post.findById(_id).populate('author').populate('categories');
             }
+            throw new AuthenticationError('Not logged in');
         }
     },
     Mutation: {
@@ -89,6 +96,7 @@ const resolvers = {
 
             const correctPw = await user.isCorrectPassword(password);
 
+            console.log(correctPw)
             if (!correctPw) {
                 throw new AuthenticationError('Incorrect password');
             }
