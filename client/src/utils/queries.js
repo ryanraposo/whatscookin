@@ -1,12 +1,12 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_CATEGORIES = gql`
-    query Query {
-        categories {
-            _id
-            name
-        }
-    }
+  query Query {
+      categories {
+          _id
+          name
+      }
+  }
 `
 
 export const QUERY_POSTS = gql`
@@ -71,29 +71,32 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_ME = gql`
-  {
+  query Me {
     me {
       _id
-      username
       email
+      username
       posts {
         _id
-        postTitle
-        postText
-        image
-        categories
+        categories {
+          _id
+          name
+        }
         createdAt
+        image
+        postText
+        postTitle
       }
     }
   }
 `;
 
 export const QUERY_ME_BASIC = gql`
-  {
+  query Me {
     me {
       _id
-      username
       email
+      username
     }
   }
 `;

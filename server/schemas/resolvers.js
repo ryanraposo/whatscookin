@@ -22,7 +22,7 @@ const resolvers = {
         user: async (parent, { _id }, context) => {
             if (context.user) {
                 const user = await User.findById(_id)
-                    .select('-__v')
+                    .select('-__v -password')
                     .populate({
                         path: 'posts',
                         populate: 'categories'
