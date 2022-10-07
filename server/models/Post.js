@@ -2,9 +2,9 @@ const { Schema, model } = require('mongoose');
 
 const dateFormat = require('../utils/dateFormat');
 
-const postsSchema = new Schema(
+const postSchema = new Schema(
   {
-    postTitle:{
+    postTitle: {
       type: String,
       required: true,
     },
@@ -15,21 +15,21 @@ const postsSchema = new Schema(
       //maxlength: 280
     },
     image: {
-        type: String,
+      type: String,
     },
     // The categories will be set in the front end (the names of them)
-    categories: {
-        type: String,
-        required: true
-    },
+    categories: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Category'
+    }],
     createdAt: {
       type: Date,
       default: Date.now,
       get: timestamp => dateFormat(timestamp)
     },
-    username: {
-      type: String,
-      required: true
+    author: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
     }
   },
   {
@@ -41,6 +41,6 @@ const postsSchema = new Schema(
 
 
 
-const Posts = model('Posts', postsSchema);
+const Post = model('Post', postSchema);
 
-module.exports = Posts;
+module.exports = Post;
