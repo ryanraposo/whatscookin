@@ -6,7 +6,7 @@ import 'react-quill/dist/quill.snow.css';
 function PostForm() {
     const [value, setValue] = useState('');
 
-    const modules = {
+    const quillModules = {
         toolbar: [
           [{ 'header': [1, 2, false] }],
           ['bold', 'italic', 'underline','strike', 'blockquote'],
@@ -19,17 +19,17 @@ function PostForm() {
     return (
         <>
             {/* DEBUG */}
-            <br/>
-            {value}
-            <br/>
+            <h2 style={{color: "red"}}>DEBUG</h2>
+            <br/>{value}<br/>
+            <h2 style={{color: "red"}}>DEBUG</h2>
             {/* DEBUG */}
-
             <ReactQuill 
                 theme="snow" 
                 value={value} 
                 onChange={setValue}
-                modules={modules} 
+                modules={quillModules} 
             />
+
         </>
     );
 }
