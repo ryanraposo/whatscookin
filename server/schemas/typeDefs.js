@@ -15,7 +15,7 @@ const typeDefs = gql`
         image: String
         categories:[Category]
         createdAt: String
-        author: User
+        username: String
     }
 
     type Category {
@@ -32,13 +32,13 @@ const typeDefs = gql`
         categories: [Category]
         me: User
         user(_id: ID!): User
-        posts(categories: [ID], postTitle: String): [Post]
+        posts(categories: [ID], username: String): [Post]
         post(_id: ID!): Post
     }
 
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
-        addPost(postTitle: String!, postText: String!, image: String, categories: [ID!], author: ID!): Post
+        addPost(username: String!, postTitle: String!, postText: String!, image: String, categories: [ID!]): Post
         updateUser(username: String, email: String, password: String): User
         updatePost(postTitle: String, postText: String, image: String, categories: [ID]): Post
         login(email: String!, password: String): Auth

@@ -27,14 +27,14 @@ export const ADD_USER = gql`
 
 export const ADD_POST = gql`
   mutation addPost($postTitle: String!, $postText: String!, $image: String, $categories: [String!]!) {
-    addThought(postTitle: $postTitle, postText: $postText, image: $image, categories: $categories) {
+    addPost(postTitle: $postTitle, postText: $postText, image: $image, categories: $categories) {
       _id
       postTitle
       postText
       image
       categories
       createdAt
-      author
+      username
     }
   }
 `;
