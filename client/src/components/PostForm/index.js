@@ -10,11 +10,11 @@ function PostForm() {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [categories, setCategories] = useState({
-        breakfast: false,
-        lunch: false,
-        dinner: false,
-        dessert: false,
-        soup: false
+        "breakfast": false,
+        "lunch": false,
+        "dinner": false,
+        "dessert": false,
+        "soup": false
     });
 
     const [addPost, { error }] = useMutation(ADD_POST);
@@ -32,15 +32,24 @@ function PostForm() {
     async function handleSubmit(event) {
         event.preventDefault();
 
+        const selectedCategories = [];
+        for (const [category, isChecked] of Object.entries(categories)) {
+            if (isChecked) {
+                selectedCategories.push(category);
+            } 
+        };
+
         console.log({
             "title" : title,
             "body": body,
-            "categories": categories
+            "categories": selectedCategories
         });
+
+        const image = "";
         
         try {
             await addPost({
-                variables: { title, body, categories }
+                variables: { title, body, image, categories }
             });
         } catch (e) {
             console.error(e);
