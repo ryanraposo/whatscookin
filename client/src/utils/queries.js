@@ -2,17 +2,20 @@ import { gql } from '@apollo/client';
 
 
 export const QUERY_POSTS = gql`
-    query posts($username: String) {
-        posts(username: $username) {
-            _id
-            postTitle
-            postText
-            image
-            categories
-            createdAt
-            author
-        }
+  query Posts($username: String) {
+    posts(username: $username) {
+      _id
+      postTitle
+      postText
+      image
+      categories {
+        _id
+        name
+      }
+      createdAt
+      username
     }
+  }
 `;
 
 export const QUERY_POST = gql`
@@ -24,7 +27,7 @@ export const QUERY_POST = gql`
             image
             categories
             createdAt
-            author
+            username
         }
     }
 `;

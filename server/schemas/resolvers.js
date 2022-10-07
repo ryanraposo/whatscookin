@@ -37,11 +37,11 @@ const resolvers = {
                 };
             }
 
-            return await Post.find(params).populate('author').populate('categories');
+            return await Post.find(params).populate('username').populate('categories');
         },
         post: async (parent, { _id }, context) => {
             if (context.user) {
-                return await Post.findById(_id).populate('author').populate('categories');
+                return await Post.findById(_id).populate('username').populate('categories');
             }
         }
     },
