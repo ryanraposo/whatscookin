@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 
-function Editor() {
+function PostForm() {
     const [value, setValue] = useState('');
 
     const modules = {
@@ -35,4 +35,4 @@ function Editor() {
 }
 
 
-export default Editor;
+export default PostForm;

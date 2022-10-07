@@ -1,12 +1,9 @@
-import Auth from '../utils/auth';
-import { ADD_POST } from '../utils/mutations';
-
-import Editor from '../components/Editor'; 
+import PostForm from '../components/PostForm'; 
 
 
 const NewPost = () => {
     return (
-        <Editor/>
+        <PostForm/>
     )
 }
 
