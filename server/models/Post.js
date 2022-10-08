@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const commentsSchema = require('./Comments');
+const commentSchema = require('./Comment');
 const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
@@ -8,14 +8,11 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
-    postText: {
+    postBody: {
       type: String,
       required: 'Your blog post needs text!',
       minlength: 1,
       //maxlength: 280
-    },
-    image: {
-      type: String,
     },
     categories: [{
       type: Schema.Types.ObjectId,
@@ -30,7 +27,7 @@ const postSchema = new Schema(
       type: String,
       required: true
     },
-    comments: [commentsSchema] 
+    comments: [commentSchema] 
   },
   {
     toJSON: {

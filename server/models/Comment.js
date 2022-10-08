@@ -2,9 +2,9 @@ const { Schema } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 // Comment model: body (text content), username (author), and date to identify when comment was made. 
-const commentsSchema = new Schema(
+const commentSchema = new Schema(
   {
-    commentsBody: {
+    commentBody: {
       type: String,
       required: true,
       maxlength: 280
@@ -26,4 +26,4 @@ const commentsSchema = new Schema(
   }
 );
 
-module.exports = commentsSchema;
+module.exports = commentSchema;

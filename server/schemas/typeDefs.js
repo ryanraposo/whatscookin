@@ -8,14 +8,21 @@ const typeDefs = gql`
         posts: [Post]
     }
 
+    type Comment {
+        _id: ID
+        commentBody: String
+        createdAt: String
+        username: String
+    }
+
     type Post {
         _id: ID
         postTitle: String
-        postText: String
-        image: String
+        postBody: String
         categories:[Category]
         createdAt: String
         username: String
+        comments: [Comment]
     }
 
     type Category {
@@ -38,11 +45,13 @@ const typeDefs = gql`
 
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
-        addPost(username: String!, postTitle: String!, postText: String!, image: String, categories: [ID!]): Post
+        addPost(username: String!, postTitle: String!, postBody: String!, categories: [ID!]): Post
+        addComment(postId: ID!, commentBody: String!): Post
         updateUser(username: String, email: String, password: String): User
-        updatePost(postTitle: String, postText: String, image: String, categories: [ID]): Post
+        updatePost(_id: ID!, postTitle: String, postText: String, image: String, categories: [ID]): Post
         login(email: String!, password: String): Auth
         deletePost(_id: ID!): Post
+        deleteComment(_id: ID!, postId: ID!): Post
     }
 `;
 
