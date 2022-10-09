@@ -30,7 +30,7 @@ db.once('open', async () => {
 
     const post = await Post.create({
             postTitle: 'Fried eggs',
-            postText: 
+            postBody: 
             `<h1>Lorem Ipsum</h1><p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
             </p><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAACoFBMVEUAAAAGAP8GAf8HAv8IA/8JBP8KBf8LBv8MB/8NCP8OCf8PCv8QC/8RDP8SDf8TDv8UD/8VEP8WEf8XEv8YE/8ZFP8aFf8bFv8cF/8dGP8eGf8fGv8gG/8hHP8iHf8jHv8kH/8lIP8mIf8nIv8oI/8pJP8qJf8rJv8sJ/8tKP8uKf8vKv8vK/8wLP8xLf8yLv8zL/80MP81Mf83M/84NP85Nf86Nv87N/88OP89Of8+Ov8/O/9APP9BPf9CPv9DP/
             9EQP9FQf9GQv9HQ/9JRf9KRv9LR/9NSf9OSv9PS/9QTP9RTf9STv9TT/9UUP9VUf9WUv9XU/9YVP9ZVf9ZVv9aV/9bWP9cWf9dWv9eW/9gXf9hXv9iX/9kYf9lY
