@@ -23,6 +23,7 @@ const typeDefs = gql`
         createdAt: String
         username: String
         comments: [Comment]
+        commentsCount: Int
     }
 
     type Category {
@@ -45,11 +46,11 @@ const typeDefs = gql`
 
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
-        addPost(username: String!, postTitle: String!, postBody: String!, categories: [ID!]): Post
+        addPost(postTitle: String!, postBody: String!, categories: [ID]!): Post
         addComment(postId: ID!, commentBody: String!): Post
         updateUser(username: String, email: String, password: String): User
-        updatePost(_id: ID!, postTitle: String, postText: String, image: String, categories: [ID]): Post
-        login(email: String!, password: String): Auth
+        updatePost(_id: ID!, postTitle: String, postBody: String, categories: [ID]): Post
+        login(email: String!, password: String!): Auth
         deletePost(_id: ID!): Post
         deleteComment(_id: ID!, postId: ID!): Post
     }

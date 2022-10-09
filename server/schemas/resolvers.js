@@ -11,7 +11,10 @@ const resolvers = {
             if (context.user) {
                 const me = await User.findById(context.user._id)
                     .select('-__v -password')
-                    .populate('posts');
+                    .populate({
+                        path: 'posts',
+                        populate: 'categories'
+                    });
                 return me;
             }
             throw new AuthenticationError('Not logged in');
@@ -20,7 +23,10 @@ const resolvers = {
             if (context.user) {
                 const user = await User.findById(_id)
                     .select('-__v -password')
-                    .populate('posts');
+                    .populate({
+                        path: 'posts',
+                        populate: 'categories'
+                    });
                 return user;
             }
             throw new AuthenticationError('Not logged in');
@@ -126,7 +132,7 @@ const resolvers = {
             if (context.user) {
                 return await Post.findByIdAndUpdate(
                     { _id: postId },
-                    { $pull: { comments: _id } },
+                    { $pull: { comments: { _id: _id } } },
                     { new: true }
                 ).populate("categories");
             }

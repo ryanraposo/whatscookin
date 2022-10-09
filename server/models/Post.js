@@ -31,13 +31,14 @@ const postSchema = new Schema(
   },
   {
     toJSON: {
+      virtuals: true,
       getters: true
     }
   }
 );
 
 // returns the length of the comments array that is found for a post
-postSchema.virtual('commentsSchema').get(function() {
+postSchema.virtual('commentsCount').get(function() {
   return this.comments.length;
 });
 
