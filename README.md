@@ -64,7 +64,7 @@ Licensed under the MIT License
 - [Shu Yang](https://github.com/NewChap2022)
 - [Charles Zacour](https://github.com/DexZax)
 - [Ryan Raposo](https://github.com/ryanraposo)
-- [Daniel](https://github.com/RubinoD1)
+- [Daniel Rubino](https://github.com/RubinoD1)
 
 ## Questions
 
