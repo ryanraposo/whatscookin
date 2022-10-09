@@ -36,11 +36,11 @@ Front End
 - Bootstrap
 
 Back End
-- API-s
+- API's
 - NODE
 - Express
 - GraphQL
-- REST
+
 
 ## Installation
 
