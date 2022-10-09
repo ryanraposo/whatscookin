@@ -15,7 +15,7 @@ A food blogging site
 
 A food blogging app where users can post recipes and pictures, as well as interact with others in the food culture and industry.
 
-this is a complete front end and back end aplication.
+this is a complete front end and back end aplication. Please find the [Tech-Stack](#tech-stack) section to view what tech the team used to put together this application
 
 ## User-Story
 
@@ -48,7 +48,9 @@ Pull from the remote Repository.
 
 run the following code:
 
+```sh
 npm i
+```
 
 ## Usage
 
