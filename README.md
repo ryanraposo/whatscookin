@@ -12,6 +12,7 @@ A food blogging site
 8. [Questions](#questions)
 
 ## Description
+
 A food blogging app where users can post recipes and pictures, as well as interact with others in the food culture and industry.
 
 this is a complete front end and back end aplication.
@@ -42,6 +43,7 @@ Back End
 - REST
 
 ## Installation
+
 Pull from the remote Repository.
 
 run the following code:
@@ -53,8 +55,13 @@ npm i
 
 ## License
 
+Licensed under the MIT License
 
-## Constributing
+## Contributing
 
+- [Shu Yang](https://github.com/NewChap2022)
+- [Charles Zacour](https://github.com/DexZax)
+- [Ryan Raposo](https://github.com/ryanraposo)
+- [Daniel](https://github.com/RubinoD1)
 
 ## Questions
