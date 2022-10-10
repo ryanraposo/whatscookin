@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-
+const commentSchema = require('./Comment');
 const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
@@ -8,16 +8,12 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
-    postText: {
+    postBody: {
       type: String,
       required: 'Your blog post needs text!',
       minlength: 1,
       //maxlength: 280
     },
-    image: {
-      type: String,
-    },
-    // The categories will be set in the front end (the names of them)
     categories: [{
       type: Schema.Types.ObjectId,
       ref: 'Category'
@@ -30,16 +26,21 @@ const postSchema = new Schema(
     username: {
       type: String,
       required: true
-    }
+    },
+    comments: [commentSchema] 
   },
   {
     toJSON: {
+      virtuals: true,
       getters: true
     }
   }
 );
 
-
+// returns the length of the comments array that is found for a post
+postSchema.virtual('commentsCount').get(function() {
+  return this.comments.length;
+});
 
 const Post = model('Post', postSchema);
 
