@@ -12,6 +12,7 @@ import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import NoMatch from './pages/NoMatch';
 import NewPost from './pages/NewPost';
+import SinglePost from './pages/SinglePost'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -63,6 +64,10 @@ function App() {
                 <Route path=":username" element={<Profile />} />
                 <Route path="" element={<Profile />} />
               </Route>
+              <Route
+                path="/post/:id"
+                element={<SinglePost />}
+              />
               <Route
                 path="*"
                 element={<NoMatch />}
