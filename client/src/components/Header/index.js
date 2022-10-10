@@ -16,6 +16,11 @@ const Header = () => {
           <h1>Whats Cookin'</h1>
         </Link>
         <nav className="text-center">
+          {Auth.loggedIn() && (
+            <>
+              <Link to="/new-post">New</Link>
+            </>
+          )}
           {Auth.loggedIn() ? (
             <>
               <Link to="/profile">Me</Link>
