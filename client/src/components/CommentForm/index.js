@@ -39,7 +39,7 @@ const CommentForm = ({ thoughtId }) => {
                 onSubmit={handleFormSubmit}
             >
                 <textarea
-                    placeholder="Leave a Comment to this thought..."
+                    placeholder="Leave a Comment..."
                     className="form-input col-12 col-md-9"
                     onChange={handleChange}
                 ></textarea>
