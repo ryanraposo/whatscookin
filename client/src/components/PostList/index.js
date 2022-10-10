@@ -24,7 +24,6 @@ const PostList = ({ posts, title }) => {
                 </Link>)</p>
               </div>
               <div className="card-body">
-                
                 { <div dangerouslySetInnerHTML={{ __html: post.postBody }} /> }
               </div>
             </div>
