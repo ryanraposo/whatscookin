@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const commentsSchema = require('./Comments');
+const commentSchema = require('./Comment');
 const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
@@ -8,14 +8,11 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
-    postText: {
+    postBody: {
       type: String,
       required: 'Your blog post needs text!',
       minlength: 1,
       //maxlength: 280
-    },
-    image: {
-      type: String,
     },
     categories: [{
       type: Schema.Types.ObjectId,
@@ -30,17 +27,18 @@ const postSchema = new Schema(
       type: String,
       required: true
     },
-    comments: [commentsSchema] 
+    comments: [commentSchema] 
   },
   {
     toJSON: {
+      virtuals: true,
       getters: true
     }
   }
 );
 
 // returns the length of the comments array that is found for a post
-postSchema.virtual('commentsSchema').get(function() {
+postSchema.virtual('commentsCount').get(function() {
   return this.comments.length;
 });
 
