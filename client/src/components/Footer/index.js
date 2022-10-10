@@ -1,8 +1,11 @@
 const Footer = () => {
   return (
-    <footer className="w-100 mt-auto bg-secondary p-4">
-      <div className="container">&copy;2020</div>
-    </footer>
+    <div className="fixed-bottom">
+      <footer className='text-center p-3' style={{ backgroundColor: '#212529', color: 'white' }}>
+          ©2022
+      </footer>
+    </div>
+
   );
 };
 

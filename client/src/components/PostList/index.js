@@ -20,11 +20,11 @@ const PostList = ({ posts, title }) => {
                 >
                   {post.username}
                 </Link>{' '}
-                post on {post.createdAt}
+                <h5>{post.postTitle}</h5> on {post.createdAt}
               </p>
               <div className="card-body">
                 <Link to={`/post/${post._id}`}>
-                  <p>{post.postText}</p>
+                  <p>{post.postBody}</p>
                 </Link>
               </div>
             </div>

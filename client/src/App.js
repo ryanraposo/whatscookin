@@ -11,6 +11,9 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import NoMatch from './pages/NoMatch';
+import NewPost from './pages/NewPost';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const httpLink = createHttpLink({
@@ -43,6 +46,10 @@ function App() {
               <Route
                 path="/"
                 element={<Home />}
+              />
+              <Route
+                path="/new-post"
+                element={<NewPost />}
               />
               <Route  
                 path="/login"
