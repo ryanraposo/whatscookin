@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
 
 const Header = () => {
 
@@ -10,28 +14,29 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <Link to="/">
-          <h1>Whats Cookin'</h1>
-        </Link>
-        <nav className="text-center">
+    <Navbar bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand as={Link} to="/" >Whats Cookin'</Navbar.Brand>
+        <Nav className="me-auto">
+          {Auth.loggedIn() && (
+            <>
+              <Nav.Link as={Link} to="/new-post" >New</Nav.Link>
+            </>
+          )}
           {Auth.loggedIn() ? (
             <>
-              <Link to="/profile">Me</Link>
-              <a href="/" onClick={logout}>
-                Logout
-              </a>
+              <Nav.Link as={Link} to="/profile" >Me</Nav.Link>
+              <Nav.Link as={Link} to="/logout" onClick={logout} >Logout</Nav.Link>
             </>
           ) : (
             <>
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
+              <Nav.Link as={Link} to="/login" >Login</Nav.Link>
+              <Nav.Link as={Link} to="/signup">Signup</Nav.Link>
             </>
           )}
-        </nav>
-      </div>
-    </header>
+        </Nav>
+      </Container>
+    </Navbar>
   );
 };
 
