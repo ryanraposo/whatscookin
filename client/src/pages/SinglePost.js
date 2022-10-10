@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_POST } from '../utils/queries';
@@ -21,22 +22,25 @@ const SinglePost = props => {
   }
 
   return (
-    <div>
-      <div className="card mb-3">
-        <p className="card-header">
-          <span style={{ fontWeight: 700 }} className="text-light">
+    <div key={post._id} className="card mb-3">
+      <div className="card-header">
+          <h5>{post.postTitle}</h5>
+        <p>
+          {post.createdAt} (
+          <Link
+            to={`/profile/${post.username}`}
+            style={{ fontWeight: 700 }}
+          >
             {post.username}
-          </span>{' '}
-          post on {post.createdAt}
+          </Link>
+          )
         </p>
-        <div className="card-body">
-          <p>{post.postBody}</p>
-        </div>
       </div>
-
-      {post.commentCount > 0 && <CommentList comments={post.comments} />}
-      {Auth.loggedIn() && <CommentForm postId={post._id} />}
-
+      <div className="card-body">
+        {<div dangerouslySetInnerHTML={{ __html: post.postBody }} />}
+        {post.commentCount > 0 && <CommentList comments={post.comments} />}
+        {Auth.loggedIn() && <CommentForm postId={post._id} />}
+      </div>
     </div>
   );
 };
