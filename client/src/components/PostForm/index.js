@@ -21,7 +21,6 @@ function PostForm() {
     const [addPost, { error }] = useMutation(ADD_POST);
     const { loading, data } = useQuery(QUERY_CATEGORIES);
 
-
     const quillModules = {
         toolbar: [
           [{ 'header': [1, 2, false] }],
@@ -43,8 +42,6 @@ function PostForm() {
             "soup": data.categories[4]._id
         }
 
-        console.log(categoryIDs);
-
         const selectedCategories = [];
         for (const [category, isChecked] of Object.entries(categories)) {
             if (isChecked) {
@@ -57,6 +54,8 @@ function PostForm() {
             "postBody": body,
             "categories": selectedCategories
         };
+
+        console.log(vars);
 
         
         try {
