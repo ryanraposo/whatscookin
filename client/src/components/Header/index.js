@@ -17,7 +17,7 @@ const Header = () => {
     <Navbar bg="dark" variant="dark">
       <Container>
         <Navbar.Brand as={Link} to="/" >Whats Cookin'</Navbar.Brand>
-        <Nav className="me-auto">
+        <Nav className="ml-auto">
           {Auth.loggedIn() && (
             <>
               <Nav.Link as={Link} to="/new-post" >New</Nav.Link>
