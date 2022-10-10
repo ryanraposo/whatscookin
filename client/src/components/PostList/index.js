@@ -24,7 +24,7 @@ const PostList = ({ posts, title }) => {
               </p>
               <div className="card-body">
                 <Link to={`/post/${post._id}`}>
-                  <p>{post.postText}</p>
+                  <p>{post.postBody}</p>
                 </Link>
               </div>
             </div>
