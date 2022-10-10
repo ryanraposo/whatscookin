@@ -22,5 +22,8 @@
   "homepage": "https://github.com/ryanraposo/whatscookin#readme",
   "devDependencies": {
     "concurrently": "^7.4.0"
+  },
+  "dependencies": {
+    "react-quill": "^2.0.0"
   }
 }
