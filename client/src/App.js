@@ -13,6 +13,8 @@ import Profile from './pages/Profile'; //empty
 import NoMatch from './pages/NoMatch';
 import NewPost from './pages/NewPost';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql'
