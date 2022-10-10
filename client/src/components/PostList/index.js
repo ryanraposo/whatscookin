@@ -12,20 +12,20 @@ const PostList = ({ posts, title }) => {
         {posts &&
           posts.map(post => (
             <div key={post._id} className="card mb-3">
-              <p className="card-header">
-                <Link
+              <div className="card-header">
+                <Link to={`/post/${post._id}`}>
+                  <h5>{post.postTitle}</h5>
+                 </Link>
+                <p>{post.createdAt} (<Link
                   to={`/profile/${post.username}`}
                   style={{ fontWeight: 700 }}
-                  className="text-light"
                 >
                   {post.username}
-                </Link>{' '}
-                <h5>{post.postTitle}</h5> on {post.createdAt}
-              </p>
+                </Link>)</p>
+              </div>
               <div className="card-body">
-                <Link to={`/post/${post._id}`}>
-                  <p>{post.postBody}</p>
-                </Link>
+                
+                { <div dangerouslySetInnerHTML={{ __html: post.postBody }} /> }
               </div>
             </div>
           ))}
