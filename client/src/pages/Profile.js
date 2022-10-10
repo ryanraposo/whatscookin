@@ -3,10 +3,10 @@ import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import PostList from "../components/PostList";
 import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
-import { QUERY_USER } from "../utils/queries";
 
 const Profile = () => {
   const { username: userParam } = useParams();
+
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
