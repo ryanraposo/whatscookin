@@ -3,6 +3,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { ADD_POST } from '../../utils/mutations';
 import { QUERY_CATEGORIES } from '../../utils/queries';
 
+import {Button, Container, Form, Card} from 'react-bootstrap'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -80,59 +81,70 @@ function PostForm() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="title">Title: </label>
-                <input type="text" id="title" onChange={(e) => setTitle(e.target.value)} />
+        
+        <Container className = "postMain">
+            
+            <Card className = "postCard">
+            <h2>Create a new Post!</h2>
+            <Form.Group  onSubmit={handleSubmit}>
+                <Form.Control className = "mb-2" placeholder = "What is the Name of your Dish!?" type="text" id="title" onChange={(e) => setTitle(e.target.value)} />
                 <ReactQuill 
+                    className = "quill"
                     theme="snow" 
                     value={body} 
                     onChange={setBody}
                     modules={quillModules} 
                 />
-                <div>
-                    <input type="checkbox"
+                <h5>What categories best descibe your dish?</h5>
+                <Container>
+                    <Form.Check type="checkbox"
+                    label = "Breakfast"
                         name="breakfast"
                         onChange={handleCheckboxChange}
                         checked={categories.breakfast}
                     />
-                    <label htmlFor="breakfast">Breakfast</label><br/>
+                    
 
-                    <input type="checkbox"
+                    <Form.Check type="checkbox"
+                    label = "Lunch"
                         name="lunch"
                         onChange={handleCheckboxChange}
                         checked={categories.lunch}
                     />
-                    <label htmlFor="lunch">Lunch</label><br/>
+                    
 
-                    <input type="checkbox"
+                    <Form.Check type="checkbox"
+                    label = "Dinner"
                         name="dinner"
                         onChange={handleCheckboxChange}
                         checked={categories.dinner}
                     />
-                    <label htmlFor="dinner">Dinner</label><br/>
+                    
 
-                    <input type="checkbox"
+                    <Form.Check type="checkbox"
+                    label = "Dessert"
                         name="dessert"
                         onChange={handleCheckboxChange}
                         checked={categories.dessert}
                     />
-                    <label htmlFor="dessert">Dessert</label><br/>
+                    
 
-                    <input type="checkbox"
+                    <Form.Check type="checkbox"
+                    label = "Soup"
                         name="soup"
                         onChange={handleCheckboxChange}
                         checked={categories.soup}
                     />
-                    <label htmlFor="soup">Soup</label><br/>
+                    
 
-                </div>
-                <button className="btn col-12 col-md-3" type="submit">
+                </Container>
+                <Button className="btn col-12 col-md-3" type="submit">
                     Submit
-                </button>
+                </Button>
                 {error && <span className="ml-2"><br/>Something went wrong...</span>}
-            </form>
-        </div>
+            </Form.Group>
+            </Card>
+        </Container>
     );
 }
 
