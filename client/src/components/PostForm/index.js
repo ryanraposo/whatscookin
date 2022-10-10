@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { ADD_POST } from '../../utils/mutations';
+import { QUERY_CATEGORIES } from '../../utils/queries';
 
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -18,6 +19,8 @@ function PostForm() {
     });
 
     const [addPost, { error }] = useMutation(ADD_POST);
+    const { loading, data } = useQuery(QUERY_CATEGORIES);
+
 
     const quillModules = {
         toolbar: [
@@ -32,24 +35,33 @@ function PostForm() {
     async function handleSubmit(event) {
         event.preventDefault();
 
+        const categoryIDs = {
+            "breakfast": data.categories[0]._id,
+            "lunch": data.categories[1]._id,
+            "dinner": data.categories[2]._id,
+            "dessert": data.categories[3]._id,
+            "soup": data.categories[4]._id
+        }
+
+        console.log(categoryIDs);
+
         const selectedCategories = [];
         for (const [category, isChecked] of Object.entries(categories)) {
             if (isChecked) {
-                selectedCategories.push(category);
+                selectedCategories.push(categoryIDs[category]);
             } 
         };
 
-        console.log({
-            "title" : title,
-            "body": body,
+        const vars = {
+            "postTitle" : title,
+            "postBody": body,
             "categories": selectedCategories
-        });
+        };
 
-        const image = "";
         
         try {
             await addPost({
-                variables: { title, body, image, categories }
+                variables: vars
             });
         } catch (e) {
             console.error(e);
