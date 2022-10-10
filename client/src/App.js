@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home'; //empty
 import Login from './pages/Login'; 
 import Signup from './pages/Signup';
-import Profile from './pages/Profile'; //empty
+import Profile from './pages/Profile';
 import NoMatch from './pages/NoMatch';
 import NewPost from './pages/NewPost';
 
