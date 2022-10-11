@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import Auth from '../../utils/auth';
+
+import Button from 'react-bootstrap/Button';
+
 
 const PostList = ({ posts, title }) => {
   if (!posts) {
@@ -28,12 +32,12 @@ const PostList = ({ posts, title }) => {
             </div>
             <div className="card-body">
               {<div dangerouslySetInnerHTML={{ __html: post.postBody }} />}
-            </div>
-            <div className="card-body">
-              <Link className="card-link" to={`/post/${post._id}`}>
-                <p>{post.postText}</p>
-                <p className="mb-0">Add Comment {post.commentCount}</p>
-              </Link>
+              <hr/>
+              {Auth.loggedIn() && (
+                <Link className="card-link" to={`/post/${post._id}`}>
+                  <Button variant="primary">Add Comment</Button>
+                </Link>
+              )}
             </div>
           </div>
         ))}

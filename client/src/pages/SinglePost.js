@@ -22,15 +22,12 @@ const SinglePost = props => {
   }
 
   return (
-    <div key={post._id} className="card mb-3">
+    <div key={post._id} className="card mb-3 mt-3">
       <div className="card-header">
           <h5>{post.postTitle}</h5>
         <p>
           {post.createdAt} (
-          <Link
-            to={`/profile/${post.username}`}
-            style={{ fontWeight: 700 }}
-          >
+          <Link to={`/profile/${post.username}`} className="card-link card-link-heavy">
             {post.username}
           </Link>
           )
@@ -38,7 +35,7 @@ const SinglePost = props => {
       </div>
       <div className="card-body">
         {<div dangerouslySetInnerHTML={{ __html: post.postBody }} />}
-        {post.commentCount > 0 && <CommentList comments={post.comments} />}
+        {post.commentsCount > 0 && <CommentList comments={post.comments} />}
         {Auth.loggedIn() && <CommentForm postId={post._id} />}
       </div>
     </div>

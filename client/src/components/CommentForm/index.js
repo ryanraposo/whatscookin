@@ -19,9 +19,14 @@ const CommentForm = ({ postId }) => {
 
     const handleFormSubmit = async event => {
         event.preventDefault();
+        const vars = {
+            "commentBody": CommentBody,
+            "postId": postId
+        }
+        console.log(vars)
         try {
             await addComment({
-                variables: { CommentBody, postId }
+                variables: vars
             });
             setBody('');
             setCharacterCount(0);
