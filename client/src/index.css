@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.postCard {
+  
+  width: 60%;
+padding: 50px 100px;
+margin: 25px;
+}
+
+.postMain {
+  display:flex;
+  justify-content: center;
+}
+
+.ql-editor {
+  height: 150px!important;
+}
+
+.content{
+  display: flex;
+  justify-content: center;
+}

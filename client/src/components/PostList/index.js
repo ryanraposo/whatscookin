@@ -9,7 +9,7 @@ const PostList = ({ posts, title }) => {
     <div>
       <h3>{title}</h3>
       {posts &&
-        posts.map((post) => (
+        posts.slice(0).reverse().map((post) => (
           <div key={post._id} className="card mb-3">
             <div className="card-header">
               <Link to={`/post/${post._id}`}>
