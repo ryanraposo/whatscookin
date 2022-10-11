@@ -45,3 +45,13 @@ margin: 25px;
 .card-link-heavy {
   font-weight: 650;
 }
+
+.content-container {
+  min-height: calc(100vh - 34px);
+}
+
+.footer--pin {
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
