@@ -54,3 +54,8 @@ code {
   left: 0;
   bottom: 0;
 }
+
+.form-input {
+  margin: 5px 5px;
+  width: 300px;
+}
