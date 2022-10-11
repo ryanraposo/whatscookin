@@ -81,9 +81,7 @@ function PostForm() {
     }
 
     return (
-        
         <Container className = "postMain">
-            
             <Card className = "postCard">
             <h2>Create a new Post!</h2>
             <Form.Group  onSubmit={handleSubmit}>
