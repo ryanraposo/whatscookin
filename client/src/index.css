@@ -32,3 +32,16 @@ margin: 25px;
   display: flex;
   justify-content: center;
 }
+
+.card-link {
+  color: #1c2936;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  color: #507092
+}
+
+.card-link-heavy {
+  font-weight: 650;
+}
