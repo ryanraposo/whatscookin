@@ -6,7 +6,7 @@ A food blogging site
 2. [User-Story](#user-story)
 3. [Tech-Stack](#tech-stack)
 4. [Insallation](#installation)
-5. [Usage](#usage)
+5. [Development](#development)
 6. [License](#license)
 7. [Contributing](#contributing)
 8. [Questions](#questions)
@@ -46,14 +46,29 @@ Back End
 
 Clone this remote Repository.
 
-run the following code:
+run the following code in your terminal, in the root directory:
 
 ```sh
 npm i
 ```
+```sh
+npm run seed
+```
 
-## Usage
 
+## Development
+
+- Use case A:
+    - run the following commands in your terminal to run the app on your local system after installing:
+```sh
+npm run seed
+```
+```sh
+npm run develop
+```
+
+- Use case B:
+    -If you do not want to download and install the application, you can navigate to ___________________ and run the currently depolyed application.
 
 ## License
 
