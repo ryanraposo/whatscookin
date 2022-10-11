@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Auth from '../../utils/auth';
+
 
 const PostList = ({ posts, title }) => {
   if (!posts) {
@@ -28,12 +30,11 @@ const PostList = ({ posts, title }) => {
             </div>
             <div className="card-body">
               {<div dangerouslySetInnerHTML={{ __html: post.postBody }} />}
-            </div>
-            <div className="card-body">
-              <Link className="card-link" to={`/post/${post._id}`}>
-                <p>{post.postText}</p>
-                <p className="mb-0">Add Comment {post.commentCount}</p>
-              </Link>
+              {Auth.loggedIn() && (
+                <Link className="card-link" to={`/post/${post._id}`}>
+                  <p className="mb-0">Add Comment {post.commentCount}</p>
+                </Link>
+              )}
             </div>
           </div>
         ))}
