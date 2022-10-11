@@ -55,15 +55,14 @@ function PostForm() {
             "postBody": body,
             "categories": selectedCategories
         };
-
-        console.log(vars);
-
         
         try {
             await addPost({
                 variables: vars
             });
+
             window.location.assign("/");
+
         } catch (e) {
             console.error(e);
         }
@@ -82,10 +81,12 @@ function PostForm() {
     }
 
     return (
+        
         <Container className = "postMain">
+            
             <Card className = "postCard">
             <h2>Create a new Post!</h2>
-            <Form.Group  onSubmit={handleSubmit}>
+            <Form.Group>
                 <Form.Control className = "mb-2" placeholder = "What is the Name of your Dish!?" type="text" id="title" onChange={(e) => setTitle(e.target.value)} />
                 <ReactQuill 
                     className = "quill"
@@ -137,7 +138,7 @@ function PostForm() {
                     
 
                 </Container>
-                <Button className="btn col-12 col-md-3" type="submit">
+                <Button className="btn col-12 col-md-3" onClick={handleSubmit}>
                     Submit
                 </Button>
                 {error && <span className="ml-2"><br/>Something went wrong...</span>}
