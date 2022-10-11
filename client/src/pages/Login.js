@@ -4,6 +4,7 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 import Button from 'react-bootstrap/Button';
+import { BREAK } from 'graphql';
 
 
 const Login = (props) => {
@@ -49,6 +50,7 @@ const Login = (props) => {
                 value={formState.email}
                 onChange={handleChange}
               />
+              <br/>
               <input
                 className='form-input'
                 placeholder='******'

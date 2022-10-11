@@ -60,7 +60,9 @@ function PostForm() {
             await addPost({
                 variables: vars
             });
-            window.location.assign('/');
+
+            window.location.assign("/");
+
         } catch (e) {
             console.error(e);
         }
