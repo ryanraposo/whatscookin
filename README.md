@@ -68,7 +68,7 @@ npm run develop
 ```
 
 - Use case B:
-    -If you do not want to download and install the application, you can navigate to ___________________ and run the currently depolyed application.
+    - If you do not want to download and install the application, you can navigate to ___________________ and run the currently depolyed application.
 
 ## License
 
