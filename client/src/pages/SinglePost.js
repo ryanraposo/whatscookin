@@ -27,10 +27,7 @@ const SinglePost = props => {
           <h5>{post.postTitle}</h5>
         <p>
           {post.createdAt} (
-          <Link
-            to={`/profile/${post.username}`}
-            style={{ fontWeight: 700 }}
-          >
+          <Link to={`/profile/${post.username}`} className="card-link card-link-heavy">
             {post.username}
           </Link>
           )
