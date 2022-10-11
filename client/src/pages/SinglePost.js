@@ -38,7 +38,7 @@ const SinglePost = props => {
       </div>
       <div className="card-body">
         {<div dangerouslySetInnerHTML={{ __html: post.postBody }} />}
-        {post.commentCount > 0 && <CommentList comments={post.comments} />}
+        {post.commentsCount > 0 && <CommentList comments={post.comments} />}
         {Auth.loggedIn() && <CommentForm postId={post._id} />}
       </div>
     </div>
