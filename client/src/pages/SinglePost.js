@@ -22,7 +22,7 @@ const SinglePost = props => {
   }
 
   return (
-    <div key={post._id} className="card mb-3">
+    <div key={post._id} className="card mb-3 mt-3">
       <div className="card-header">
           <h5>{post.postTitle}</h5>
         <p>
