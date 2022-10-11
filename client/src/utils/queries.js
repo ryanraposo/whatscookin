@@ -1,57 +1,82 @@
 import { gql } from '@apollo/client';
 
-
+export const QUERY_CATEGORIES = gql`
+  query Query {
+    categories {
+      _id
+      name
+    }
+  }
+`
 export const QUERY_POSTS = gql`
-  query Posts($username: String) {
-    posts(username: $username) {
+  query Posts {
+    posts {
       _id
       postTitle
-      postText
-      image
+      postBody
       categories {
         _id
         name
       }
       createdAt
       username
+      comments {
+        _id
+        commentBody
+        createdAt
+        username
+      }
+      commentsCount
     }
   }
 `;
 
 export const QUERY_POST = gql`
-    query post($id: ID!) {
-        post(_id: $id) {
-            _id
-            postTitle
-            postText
-            image
-            categories
-            createdAt
-            username
-        }
+  query Post($id: ID!) {
+    post(_id: $id) {
+      _id
+      postTitle
+      postBody
+      categories {
+        _id
+        name
+      }
+      createdAt
+      username
+      comments {
+        _id
+        commentBody
+        createdAt
+        username
+      }
+      commentsCount
     }
+  }
 `;
 
 export const QUERY_USER = gql`
-  query user($username: String!) {
-    user(username: $username) {
+  query User($id: ID!) {
+    user(_id: $id) {
       _id
       username
       email
       posts {
         _id
         postTitle
-        postText
-        image
-        categories
+        postBody
+        categories {
+          _id
+          name
+        }
         createdAt
+        commentsCount
       }
     }
   }
 `;
 
 export const QUERY_ME = gql`
-  {
+  query Me {
     me {
       _id
       username
@@ -59,9 +84,11 @@ export const QUERY_ME = gql`
       posts {
         _id
         postTitle
-        postText
-        image
-        categories
+        postBody
+        categories {
+          _id
+          name
+        }
         createdAt
       }
     }
@@ -69,7 +96,7 @@ export const QUERY_ME = gql`
 `;
 
 export const QUERY_ME_BASIC = gql`
-  {
+  query Query {
     me {
       _id
       username
