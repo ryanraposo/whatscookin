@@ -3,10 +3,10 @@ import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import PostList from "../components/PostList";
 import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
-import { QUERY_USER } from "../utils/queries";
 
 const Profile = () => {
   const { username: userParam } = useParams();
+
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
@@ -42,8 +42,8 @@ const Profile = () => {
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">
           <PostList
-            thoughts={user.thoughts}
-            title={`${user.username}'s thoughts...`}
+            posts={user.posts}
+            title={`${user.username}'s posts...`}
           />
         </div>
       </div>
