@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import Auth from '../../utils/auth';
+import { useQuery } from "@apollo/client";
+import { QUERY_ME } from "../../utils/queries";
 
 import Button from 'react-bootstrap/Button';
 
 
 const PostList = ({ posts, user }) => {
+
+  const { loading, data } = useQuery(QUERY_ME);
+  const currentUser = data?.me;
+
   if (!posts) {
     return <h3>No Posts Yet</h3>;
   }
@@ -40,6 +46,11 @@ const PostList = ({ posts, user }) => {
                   </Link>
                 </>
               )}
+              {user === currentUser.username && (
+                <Link className="card-link" to={`/post/${post._id}`}>
+                  <Button variant="danger">Delete</Button>
+                </Link>
+              )} 
             </div>
           </div>
         ))}
