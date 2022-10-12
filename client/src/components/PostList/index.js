@@ -1,12 +1,36 @@
 import { Link } from "react-router-dom";
 import Auth from '../../utils/auth';
+import { useQuery, useMutation } from "@apollo/client";
+import { QUERY_ME } from "../../utils/queries";
+import { DELETE_POST } from "../../utils/mutations";
 
 import Button from 'react-bootstrap/Button';
 
 
 const PostList = ({ posts, user }) => {
+  const [deletePost, { error }] = useMutation(DELETE_POST);
+  const { loading, data } = useQuery(QUERY_ME);
+  const { username } = data?.me || "";
+
+
   if (!posts) {
     return <h3>No Posts Yet</h3>;
+  }
+
+  async function handleDelete(postId) {
+    const vars = {
+      "id": postId
+    }
+  
+    try {
+        await deletePost({
+            variables: vars
+        });
+        window.location.assign("/");
+
+    } catch (e) {
+        console.error(e);
+    }
   }
 
   return (
@@ -40,6 +64,9 @@ const PostList = ({ posts, user }) => {
                   </Link>
                 </>
               )}
+              {username === post.username && (
+                <Button variant="danger" onClick={() => handleDelete(post._id)}>Delete</Button>
+              )} 
             </div>
           </div>
         ))}
