@@ -32,11 +32,13 @@ const PostList = ({ posts, user }) => {
             </div>
             <div className="card-body">
               {<div dangerouslySetInnerHTML={{ __html: post.postBody }} />}
-              <hr/>
               {Auth.loggedIn() && (
-                <Link className="card-link" to={`/post/${post._id}`}>
-                  <Button variant="primary">Add Comment</Button>
-                </Link>
+                <>
+                  <hr/>
+                  <Link className="card-link" to={`/post/${post._id}`}>
+                    <Button variant="primary">Add Comment</Button>
+                  </Link>
+                </>
               )}
             </div>
           </div>
