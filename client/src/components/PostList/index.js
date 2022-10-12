@@ -4,20 +4,20 @@ import Auth from '../../utils/auth';
 import Button from 'react-bootstrap/Button';
 
 
-const PostList = ({ posts, title }) => {
+const PostList = ({ posts, user }) => {
   if (!posts) {
     return <h3>No Posts Yet</h3>;
   }
 
   return (
     <div className="mt-3">
-      {title && (<h3>{title}</h3>)}
+      {user && (<h3 style={{fontSize: 30}}><span style={{fontStyle: "italic", fontWeight: "bold"}}>{user}</span>'s posts here...</h3>)}
       {posts &&
         posts.slice(0).reverse().map((post) => (
           <div key={post._id} className="card mb-3">
             <div className="card-header">
               <Link to={`/post/${post._id}`} className="card-link">
-                <h5>{post.postTitle}</h5>
+                <h5 style={{fontFamily: 'Paytone One, sans-serif'}}>{post.postTitle}</h5>
               </Link>
               <p>
                 {post.createdAt} (

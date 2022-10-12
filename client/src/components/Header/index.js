@@ -4,7 +4,7 @@ import Auth from '../../utils/auth';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
+import Icon from '../../assets/images/icon.png'
 
 const Header = () => {
 
@@ -16,7 +16,10 @@ const Header = () => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand as={Link} to="/" >Whats Cookin'</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/" style={{fontFamily: 'Dancing Script, cursive'}} >
+          <img src={Icon} width="30" height="30" class="d-inline-block align-top me-2" alt="website logo" />
+          Whats Cookin'
+        </Navbar.Brand>
         <Nav className="ml-auto">
           {Auth.loggedIn() && (
             <>
