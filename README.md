@@ -13,7 +13,6 @@ A food blogging site.
   - [User Story](#user-story)
   - [Tech](#tech)
   - [Usage](#usage)
-  - [License](#license)
   - [Contributing](#contributing)
   - [Questions](#questions)
 
@@ -46,7 +45,7 @@ As a user, I want all of my recepies to be saved to my public profile.
 - GraphQL
 
 
-## Installation
+## Usage
 
 Clone this repository, navigate to the root directory, and run the following:
 
