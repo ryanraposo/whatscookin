@@ -1,78 +1,60 @@
-# whatscookin
-A food blogging site
+<div align="center">
+  <a href="" rel="noopener">
+  <img width=300px src="./icon.png" alt="CodeUI"></a>
+</div>
+<br/>
 
-## Table of Contenets
-1. [Description](#description)
-2. [User-Story](#user-story)
-3. [Tech-Stack](#tech-stack)
-4. [Insallation](#installation)
-5. [Development](#development)
-6. [License](#license)
-7. [Contributing](#contributing)
-8. [Questions](#questions)
+
+# Whats Cookin'
+A food blogging site.
+
+## Table of Contents
+  - [Description](#description)
+  - [User Story](#user-story)
+  - [Tech](#tech)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Questions](#questions)
 
 ## Description
 
-A food blogging app where users can post recipes and pictures, as well as interact with others in the food culture and industry.
+A food blogging app where users can post recipes and pictures, as well as interact with others.
 
-This is a complete front end and back end aplication. Please find the [Tech-Stack](#tech-stack) section to view what tech the team used to put together this application
+This is a full-stack application.
 
-## User-Story
+## User Story
 
-As a user, I want to be able to post recipes, and pictures to those recipes on a blog sight.
+As a user, I want to be able to post recipes, and pictures to those recipes on a blog site.
 
-As a user I want to be able too interact and comment on peoples recipes and others interact with mine.
+As a user I want to be able to interact with others' recipes, and have others interact with mine.
 
-As a user, I want all of my recepies to be saved to my profile, which myself and others can reference by finiding my profile page.
+As a user, I want all of my recepies to be saved to my public profile.
 
-## Tech-Stack
+## Tech
 
-Front End
+### Front End
 - HTML
 - CSS
 - Javascript
-- JQuery
 - REACT
 - Bootstrap
 
-Back End
-- API's
-- NODE
+### Back End
+- Node.js
 - Express
 - GraphQL
 
 
 ## Installation
 
-Clone this remote Repository.
-
-run the following code in your terminal, in the root directory:
+Clone this repository, navigate to the root directory, and run the following:
 
 ```sh
-npm i
-```
-```sh
+npm run install
 npm run seed
-```
-
-
-## Development
-
-- Use case A:
-    - run the following commands in your terminal to run the app on your local system after installing:
-```sh
-npm run seed
-```
-```sh
 npm run develop
 ```
-
-- Use case B:
-    - If you do not want to download and install the application, you can navigate to ___________________ and run the currently depolyed application.
-
-## License
-
-Licensed under the MIT License
 
 ## Contributing
 
@@ -83,5 +65,5 @@ Licensed under the MIT License
 
 ## Questions
 
-for any Questions, Please reach out to any of the team members listed above.
+Questions? Please reach out to any of the team members listed above.
 
