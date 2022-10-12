@@ -85,6 +85,7 @@ export const QUERY_ME = gql`
         _id
         postTitle
         postBody
+        username
         categories {
           _id
           name

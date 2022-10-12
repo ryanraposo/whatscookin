@@ -27,7 +27,6 @@ const PostList = ({ posts, user }) => {
             variables: vars
         });
         window.location.assign("/");
-
     } catch (e) {
         console.error(e);
     }
@@ -60,7 +59,7 @@ const PostList = ({ posts, user }) => {
                 <>
                   <hr/>
                   <Link className="card-link" to={`/post/${post._id}`}>
-                    <Button variant="primary">Add Comment</Button>
+                    <Button variant="primary" className="m-1">Add Comment</Button>
                   </Link>
                 </>
               )}
