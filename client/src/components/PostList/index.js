@@ -10,10 +10,27 @@ import Button from 'react-bootstrap/Button';
 const PostList = ({ posts, user }) => {
   const [deletePost, { error }] = useMutation(DELETE_POST);
   const { loading, data } = useQuery(QUERY_ME);
-  const { username } = data?.me;
+  const { username } = data?.me || "";
+
 
   if (!posts) {
     return <h3>No Posts Yet</h3>;
+  }
+
+  async function handleDelete(postId) {
+    const vars = {
+      "id": postId
+    }
+  
+    try {
+        await deletePost({
+            variables: vars
+        });
+        window.location.assign("/");
+
+    } catch (e) {
+        console.error(e);
+    }
   }
 
   return (
@@ -48,7 +65,7 @@ const PostList = ({ posts, user }) => {
                 </>
               )}
               {username === post.username && (
-                <Button variant="danger" onClick={() => deletePost(post._id)}>Delete</Button>
+                <Button variant="danger" onClick={() => handleDelete(post._id)}>Delete</Button>
               )} 
             </div>
           </div>
