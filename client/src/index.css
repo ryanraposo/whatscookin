@@ -45,15 +45,18 @@ code {
   font-weight: 650;
 }
 
-.content-container {
-  min-height: calc(100vh - 34px);
-}
+/* .content-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+} */
 
-.footer--pin {
+/* .footer--pin {
   position: relative;
   left: 0;
   bottom: 0;
-}
+} */
 
 .form-input {
   margin: 5px 5px;

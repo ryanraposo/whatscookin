@@ -40,7 +40,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="d-flex flex-column justify-content-between" style={{minHeight: "100vh"}}>
           <Header />
           <div className="container content-container">
             <Routes>
