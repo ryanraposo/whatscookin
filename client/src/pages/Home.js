@@ -12,6 +12,7 @@ const Home = () => {
 
   return (
     <main>
+      <h2 className = "title">Check out WhatsCookin'</h2>
       <div className='flex-row justify-space-between'>
         <div className="col-12 mb-3">
           {loading ? (
