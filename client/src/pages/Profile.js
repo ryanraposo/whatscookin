@@ -37,7 +37,7 @@ const Profile = () => {
         <div className="col-12 mb-3 col-lg-8">
           <PostList
             posts={user.posts}
-            title={`${user.username}'s posts...`}
+            user={user.username}
           />
         </div>
       </div>

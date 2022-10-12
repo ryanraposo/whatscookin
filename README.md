@@ -6,21 +6,22 @@
 
 
 # Whats Cookin'
-A food blogging site.
+
+A food blogging app where users can post recipes and pictures, as well as interact with others.
 
 ## Table of Contents
-  - [Description](#description)
+  - [Screenshot](#description)
   - [User Story](#user-story)
   - [Tech](#tech)
   - [Usage](#usage)
   - [Contributing](#contributing)
   - [Questions](#questions)
+  - [Links](#links)
 
-## Description
+## Screenshot
 
-A food blogging app where users can post recipes and pictures, as well as interact with others.
+![Whats Cookin'](./screenshot.png)
 
-This is a full-stack application.
 
 ## User Story
 
@@ -66,3 +67,6 @@ npm run develop
 
 Questions? Please reach out to any of the team members listed above.
 
+## Links
+
+See the deployed site at: https://floating-river-67151.herokuapp.com/
